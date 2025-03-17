@@ -27,6 +27,7 @@ public class GestionDesPatientsApplication implements CommandLineRunner {
         patient.setScore(10);
 
         Patient patient2 = new Patient(null, "Khalid", new Date(), false, 20);
+
         //En utilisant Builder
         Patient patient3 = Patient.builder()
                 .name("Amine")
