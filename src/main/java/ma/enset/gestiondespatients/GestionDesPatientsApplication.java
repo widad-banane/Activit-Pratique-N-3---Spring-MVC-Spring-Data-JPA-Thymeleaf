@@ -19,20 +19,9 @@ public class GestionDesPatientsApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Patient patient = new Patient();
-        patient.setId(null);
-        patient.setName("Hassan");
-        patient.setDateNaissance(new Date());
-        patient.setMalade(false);
-        patient.setScore(10);
-
-        Patient patient2 = new Patient(null, "Khalid", new Date(), false, 20);
-
-        //En utilisant Builder
-        Patient patient3 = Patient.builder()
-                .name("Amine")
-                .dateNaissance(new Date())
-                .malade(true)
-                .score(130)
-                .build();
-    }}
+        // Utilisation du constructeur généré par Lombok
+        patientRepository.save(new Patient(null, "Hassan", new Date(), false, 24));
+        patientRepository.save(new Patient(null, "Rihame", new Date(), false, 316));
+        patientRepository.save(new Patient(null, "Omar", new Date(), true, 12));
+    }
+}
